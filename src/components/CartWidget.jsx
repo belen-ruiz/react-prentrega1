@@ -1,4 +1,4 @@
-
+import "./app.css"
 
 const CartWidget = () =>{
     return(
@@ -10,7 +10,7 @@ const CartWidget = () =>{
             </div>
 
             <div className="numberH" >
-                
+                3
             </div>
         </div>
     )
