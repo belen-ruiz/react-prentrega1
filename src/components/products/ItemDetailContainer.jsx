@@ -10,13 +10,13 @@ export const ItemDetailContainer = ({ saludo }) => {
 
   const [ productos, setProductos ] = useState([])
 
-  const { idCategoria } = useParams()
+  const { id } = useParams()
 
   useEffect(()=>{
     if (idCategoria) {
       getFetch()
         .then(res => {      
-          setProductos(res.filter(producto => producto.id === idCategoria))
+          setProductos(res.filter(producto => producto.id === id))
            
         })
         .catch(error => console.log(error))     
@@ -28,7 +28,7 @@ export const ItemDetailContainer = ({ saludo }) => {
         })
         .catch(error => console.log(error))      
     }
-  }, [idCategoria])
+  }, [id])
 
  
 
