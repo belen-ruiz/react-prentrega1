@@ -9,31 +9,41 @@ import { getFetch } from "../../utils/getFetch";
 export const ItemDetailContainer = ({ saludo }) => {
 
   const [ productos, setProductos ] = useState([])
+  const [ loading, setLoading ] = useState(true);
 
-  const { idCategoria } = useParams()
+
+  const { id } = useParams()
 
   useEffect(()=>{
-    if (idCategoria) {
+    if (id) {
       getFetch()
         .then(res => {      
-          setProductos(res.filter(producto => producto.id === idCategoria))
+          setProductos(res.filter(producto => producto.id === id))
            
         })
-        .catch(error => console.log(error))     
+        .catch(error => console.log(error))   
+        .finally(()=> setLoading(false))      
+  
     } else {
       getFetch()
         .then(res => {      
           setProductos(res)
           
         })
-        .catch(error => console.log(error))      
+        .catch(error => console.log(error))   
+        .finally(()=> setLoading(false))      
+   
     }
-  }, [idCategoria])
+  }, [id])
 
  
 
   return (
-    
+          loading 
+          ? 
+            <h2>Cargando...</h2> 
+          : 
+
           <div style={{
             display: 'flex',
             flexDirection: 'row',

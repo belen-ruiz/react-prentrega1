@@ -75,7 +75,7 @@ function NavBar (){
                 <Route path={"/about"} element={ <About />} />
                 <Route path={"/shop"} element={ <ItemListContainer />} />
                 <Route path={"shop/categoria"} element={ <ItemListContainer />} />
-                <Route path={"shop/categoria/:id"} element={ <ItemListContainer />} />
+                <Route path={"shop/categoria/:categoria"} element={ <ItemListContainer />} />
 
                 <Route path={"/item/:id"} element={ <ItemDetailContainer />} />
                 
