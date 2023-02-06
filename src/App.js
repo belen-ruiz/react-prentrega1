@@ -1,17 +1,17 @@
-import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
+import {  } from "react-router-dom";
+import { NavBar } from "./components";
 
 
 
 function App() {
   return (
     
-      <header className="header">
+    <header className="header">
 
-        <NavBar/>
-        <ItemListContainer greeting={"Bienvenido a nuestra tienda!"}/>
+      <NavBar />
 
-      </header>
+    </header>
       
   );
 }

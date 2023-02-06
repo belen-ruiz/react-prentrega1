@@ -17,4 +17,4 @@ const CartWidget = () =>{
 
 }
 
-export default CartWidget
+export {CartWidget};
