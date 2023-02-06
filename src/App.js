@@ -7,10 +7,10 @@ function App() {
   return (
     
       <header className="header">
-
-        <NavBar/>
-        <ItemListContainer greeting={"Bienvenido a nuestra tienda!"}/>
-
+        
+          <NavBar/>
+          <ItemListContainer greeting={"Bienvenido a nuestra tienda!"}/>
+        
       </header>
       
   );

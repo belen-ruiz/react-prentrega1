@@ -1,3 +1,5 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from "../logo.jpg"
 import CartWidget from "./CartWidget";
@@ -5,7 +7,7 @@ import CartWidget from "./CartWidget";
 function NavBar (){
 
     return(
-        <div>
+        <BrowserRouter>
             <nav className="navbar navbar-expand-lg bg-body-white border-bottom border-success border-4 px-5">
                 <div className="container-fluid">
                     <a className="navbar-brand logoContenedor" href="#"> 
@@ -16,7 +18,10 @@ function NavBar (){
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                             <li className="nav-item">
-                                <a className="nav-link active text-success" aria-current="page" href="#">Home</a>
+                                <a className="nav-link active text-success" aria-current="page">Home</a>
+
+                                
+
                             </li>
 
                             <li className="nav-item">
@@ -36,7 +41,7 @@ function NavBar (){
 
             </nav>
 
-        </div>
+        </BrowserRouter>
         
     )
 }
