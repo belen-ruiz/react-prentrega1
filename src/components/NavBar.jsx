@@ -22,8 +22,32 @@ function NavBar (){
                             </li>
 
                             <li className="nav-item">
-                                <NavLink to="/cat/remeras" className="nav-link" >shop</NavLink>
+                                <NavLink to="/shop" className="nav-link" >shop</NavLink>
+
                             </li>
+
+
+                            <li className="nav-item">
+                                
+
+                                <NavLink to="/shop/categoria" className="nav-link" >Categorias</NavLink>
+
+                            </li>
+
+                            <li className="nav-item">
+                                
+
+                                <NavLink to="/shop/categoria/exterior" className="nav-link" >exterior</NavLink>
+
+
+                            </li>
+
+                            <li className="nav-item">
+
+                                <NavLink to="/shop/categoria/interior" className="nav-link" >interior</NavLink>
+
+                            </li>
+
 
                             <li className="nav-item">
                                 <NavLink to="/about" className="nav-link" >about</NavLink>
@@ -45,14 +69,17 @@ function NavBar (){
             </nav>
 
             <Routes>
-                <Route path={"/"} element={ <ItemListContainer />} />
-                <Route path={"/cat/:id"} element={ <ItemListContainer />} />
-                <Route path={"/item/:id"} element={ <ItemDetailContainer />} />
 
 
                 <Route path={"/home"} element={ <Home />} />
                 <Route path={"/about"} element={ <About />} />
-                <Route path={"/shop"} element={ <Shop />} />
+                <Route path={"/shop"} element={ <ItemListContainer />} />
+                <Route path={"shop/categoria"} element={ <ItemListContainer />} />
+                <Route path={"shop/categoria/:id"} element={ <ItemListContainer />} />
+
+                <Route path={"/item/:id"} element={ <ItemDetailContainer />} />
+                
+
             </Routes>
 
         </BrowserRouter>
