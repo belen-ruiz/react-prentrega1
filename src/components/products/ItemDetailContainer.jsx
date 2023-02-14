@@ -11,7 +11,10 @@ export const ItemDetailContainer = ({ saludo }) => {
   const [ productos, setProductos ] = useState([])
   const [ loading, setLoading ] = useState(true);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 467aaa16118938fe2cb514effffb4e4371b9f1e3
   const { id } = useParams()
 
   useEffect(()=>{
