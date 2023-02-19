@@ -4,7 +4,6 @@ import { useParams, Link } from "react-router-dom";
 import { getFetch } from "../../utils/getFetch";
 
 
-
 export const ItemListContainer = ({ saludo }) => {
 
     const [ productos, setProductos ] = useState([]);

@@ -1,16 +1,19 @@
-import {  } from "react-router-dom";
-import { NavBar } from "./components";
-
-
+import { Footer } from "./components/Layout/Footer/Footer";
+import { Header } from "./components/Layout/Header";
+import { MainSection } from "./components/Layout/MainSection";
 
 function App() {
   return (
+
     
-    <header className="header">
+    <>
 
-      <NavBar />
+      <Header />
+      <MainSection />
+      <Footer />
+      
 
-    </header>
+    </>
       
   );
 }

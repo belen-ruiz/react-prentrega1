@@ -1,9 +1,8 @@
 
 
 
-import { CartWidget } from "./CartWidget";
+import { CartWidget } from "./Layout/Cart/CartContainer/CartWidget";
 import { ItemDetailContainer } from "./products/ItemDetailContainer";
 import { ItemListContainer } from "./products/ItemListContainer";
-import NavBar  from "./NavBar";
 
-export { CartWidget, ItemDetailContainer, ItemListContainer, NavBar};
+export { CartWidget, ItemDetailContainer, ItemListContainer};

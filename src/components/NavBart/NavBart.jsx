@@ -1,28 +1,26 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import Logo from "../logo.jpg"
 import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
-import { ItemDetailContainer , ItemListContainer, CartWidget } from "./index";
-import { Home, About, Shop } from "./pages";
+import { ItemDetailContainer , ItemListContainer, CartWidget } from "../index";
+import { Home, About, Shop } from "../pages";
 
 function NavBar (){
 
     return(
         <BrowserRouter>
 
-            <nav className="navbar navbar-expand-lg bg-body-white border-bottom border-success border-4 px-5">
-                <div className="container-fluid">
-                    <a className="navbar-brand logoContenedor" href="#"> 
-                        <img src={ Logo } alt="img logo" width={150} />
+            <nav>
+                <div>
+                    <a className="logoContenedor"> 
+                        <img alt="img logo" width={150} />
                     </a>
         
-                    <div className=" navbar" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <NavLink to="/home" className="nav-link" >Home</NavLink>
+                    <div>
+                        <ul>
+                            <li>
+                                <NavLink to="/home" className="" >Home</NavLink>
                             </li>
 
                             <li className="nav-item">
-                                <NavLink to="/shop" className="nav-link" >shop</NavLink>
+                                <NavLink to="/shop" className="" >shop</NavLink>
 
                             </li>
 
@@ -87,5 +85,4 @@ function NavBar (){
     )
 }
 
-export default NavBar;
 
