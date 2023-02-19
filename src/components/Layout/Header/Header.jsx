@@ -1,30 +1,19 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { CartWidget } from "../Cart/CartWidget/CartWidget"
 
-import { LogIn, Logo, NavBar } from "./header"
+import { CartContainer } from "../Cart/CartContainer"
+import { Logo } from "./Logo"
+import {NavBar} from "./NavBar"
+import {LogIn} from "./LogIn"
 
 export const Header = () => {
 
     return(
 
-        <BrowserRouter>
-
+        <header className="header">
             <Logo />
             <NavBar />
             <LogIn />
-            <CartWidget />
-
-            <Routes>
-
-                <Route path={"/"} element={ <Home />} />
-                <Route path={"/home"} element={ <Home />} />
-                <Route path={"/shop"} element={ <ItemListContainer />} />
-                <Route path={"shop/categoria"} element={<ItemListContainer />} />
-                <Route path={"shop/categoria/:categoria"} element={<ItemListContainer />} />
-                <Route path={"/item/:id"} element={<ItemDetailContainer />} />
-                        
-            </Routes>
-        </BrowserRouter>
+            <CartContainer />
+        </header>
 
 
     )

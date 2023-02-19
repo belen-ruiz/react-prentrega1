@@ -3,7 +3,7 @@ export const LogIn = () =>{
     return(
 
         <div>
-            <a href="">Log In</a>
+            <a href="login">Log In</a>
         </div>
     )
 }

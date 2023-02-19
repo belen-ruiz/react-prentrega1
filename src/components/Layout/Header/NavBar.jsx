@@ -1,22 +1,19 @@
-import { BrowserRouter, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () =>{
 
     return(
-        <BrowserRouter>
-            <div class="pages">
-                <ul>
+            <div className="pagesBox">
+                <ul className="pages">
                     <li>
-                        <NavLink to="/home" className="" >Home</NavLink>
+                        <NavLink to="/home" className="page" >Home</NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/shop" className="" >shop</NavLink>
+                        <NavLink to="/shop" className="page" >shop</NavLink>
                     </li>
                 </ul>
-            </div>       
-        </BrowserRouter>
-        
+            </div>               
     )
 }
 

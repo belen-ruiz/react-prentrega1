@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { getFetch } from "../../utils/getFetch";
 
 
-export const ItemListContainer = ({ saludo }) => {
+export const ItemListContainer = () => {
 
     const [ productos, setProductos ] = useState([]);
     const [ loading, setLoading ] = useState(true);
@@ -16,7 +16,6 @@ export const ItemListContainer = ({ saludo }) => {
         getFetch()
           .then(res => {      
             setProductos(res.filter(producto => producto.categoria === categoria))
-            // ACCION debe hacer una sola cosa
           })
           .catch(error => console.log(error))
           .finally(()=> setLoading(false))      
@@ -24,7 +23,6 @@ export const ItemListContainer = ({ saludo }) => {
         getFetch()
           .then(res => {      
             setProductos(res)
-            // debe hacer una sola cosa
           })
           .catch(error => console.log(error))
           .finally(()=> setLoading(false))

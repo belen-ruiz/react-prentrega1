@@ -6,9 +6,9 @@ import { getFetch } from "../../utils/getFetch";
 
 
 
-export const ItemDetailContainer = ({ saludo }) => {
+export const ItemDetailContainer = () => {
 
-  const [ productos, setProductos ] = useState([])
+  const [ producto, setProducto ] = useState([])
   const [ loading, setLoading ] = useState(true);
 
 
@@ -18,22 +18,23 @@ export const ItemDetailContainer = ({ saludo }) => {
     if (id) {
       getFetch()
         .then(res => {      
-          setProductos(res.filter(producto => producto.id === id))
+          setProducto(res.find(producto => producto.id === id))
            
         })
         .catch(error => console.log(error))   
         .finally(()=> setLoading(false))      
   
-    } else {
-      getFetch()
-        .then(res => {      
-          setProductos(res)
-          
-        })
-        .catch(error => console.log(error))   
-        .finally(()=> setLoading(false))      
-   
     }
+     //else {
+    //   getFetch()
+    //     .then(res => {      
+    //       setProductos(res)
+          
+    //     })
+    //     .catch(error => console.log(error))   
+    //     .finally(()=> setLoading(false))      
+   
+    // }
   }, [id])
 
  
@@ -49,7 +50,7 @@ export const ItemDetailContainer = ({ saludo }) => {
             flexDirection: 'row',
             flexWrap: 'wrap'
           }} >
-           { productos.map(producto =>   (
+           
                 <div key={producto.id} className='card w-25 mt-2' >
                   <Link to={`/item/${producto.id}`}>
                     <div className='card-header'>
@@ -66,11 +67,7 @@ export const ItemDetailContainer = ({ saludo }) => {
                     </div>
                   </Link>
 
-                </div>
-              )
-            )}
-
-            
+                </div>            
           </div>
           
 

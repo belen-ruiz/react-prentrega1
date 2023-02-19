@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { ItemListContainer } from "../../Item/ItemListContainer";
 
 
 export const Shop = ()=>{
@@ -21,6 +22,10 @@ export const Shop = ()=>{
 
                 </ul>
             </nav>
+
+            <ItemListContainer /> 
+
+            
         </div>
     )
 }

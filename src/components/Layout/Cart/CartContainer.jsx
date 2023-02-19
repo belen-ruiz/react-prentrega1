@@ -1,4 +1,5 @@
-import { CartWidget } from "./CartContainer/CartWidget"
+import {CartWidget} from "./CartWidget"
+
 
 export const CartContainer = () =>{
 
