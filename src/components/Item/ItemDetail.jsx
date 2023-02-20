@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getFetch } from "../../utils/getFetch";
+import { Loader } from "../common/Loader";
 import { ItemCount } from "./ItemCount";
 
 
@@ -42,7 +43,7 @@ export const ItemDetail = () => {
   return (
           loading 
           ? 
-            <h2>Cargando...</h2> 
+            <Loader /> 
           : 
 
           <div style={{

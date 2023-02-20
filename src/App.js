@@ -16,21 +16,22 @@ function App() {
 
         <BrowserRouter> 
         <CartProvider>
+
           <Header/>
           
           
           <Routes>
-
             <Route path={"/"} element={ <Shop />} />
             <Route path={"/home"} element={ <Home />} />
             <Route path={"/shop"} element={ <Shop />} />
             <Route path={"shop/categoria"} element={<ItemListContainer />} />
             <Route path={"shop/categoria/:categoria"} element={<ItemListContainer />} />
             <Route path={"/item/:id"} element={<ItemDetailContainer />} />
-                              
           </Routes>
         
+        
           <Footer />
+
         </CartProvider>
         </BrowserRouter>
       

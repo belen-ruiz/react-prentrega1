@@ -1,7 +1,8 @@
 import React,{ useState, useEffect } from "react"
 import { getFetch } from "../../utils/getFetch";
 
-export const ItemCount = ({ stock, initial,  onAdd }) => {
+
+export const ItemCount = ({ stock, initial,  onAdd  }) => {
     
     const [count, setCount] = useState(0);
 
@@ -12,17 +13,22 @@ export const ItemCount = ({ stock, initial,  onAdd }) => {
     const resta =()=>{
         setCount(prevState =>{ return prevState -1 })
     }
+    
+    onAdd =()=>{
+        const arrayCart = count
+    }
+
 
     return(
         <div className="box">
             <div className="counter">
                 <div className="counterItems op" onClick={suma}> + </div>
-                <div className="counterItems" > {count} </div>
+                <div className="counterItems" value="itemsOnCart"> {count} </div>
                 <div className="counterItems op" onClick={resta} > - </div>
             </div>
 
             <div className="addToCart">
-                <button >Agregar al Carrito</button>
+                <button onClick={onAdd}>Agregar al Carrito</button>
             </div>
 
         </div>
