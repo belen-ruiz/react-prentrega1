@@ -3,10 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getFetch } from "../../utils/getFetch";
+import { ItemCount } from "./ItemCount";
 
 
 
-export const ItemDetailContainer = () => {
+export const ItemDetail = () => {
 
   const [ producto, setProducto ] = useState([])
   const [ loading, setLoading ] = useState(true);
@@ -25,16 +26,6 @@ export const ItemDetailContainer = () => {
         .finally(()=> setLoading(false))      
   
     }
-     //else {
-    //   getFetch()
-    //     .then(res => {      
-    //       setProductos(res)
-          
-    //     })
-    //     .catch(error => console.log(error))   
-    //     .finally(()=> setLoading(false))      
-   
-    // }
   }, [id])
 
  
@@ -45,12 +36,7 @@ export const ItemDetailContainer = () => {
             <h2>Cargando...</h2> 
           : 
 
-          <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap'
-          }} >
-           
+          <div>
                 <div key={producto.id} className='card w-25 mt-2' >
                   <Link to={`/item/${producto.id}`}>
                     <div className='card-header'>
@@ -63,10 +49,11 @@ export const ItemDetailContainer = () => {
                       Precio: {producto.price}
                     </div>
                     <div className='card-footer'>
-                       
+                        
+
                     </div>
                   </Link>
-
+                  <ItemCount />
                 </div>            
           </div>
           

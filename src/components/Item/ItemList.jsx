@@ -1,30 +1,16 @@
-import { Link } from "react-router-dom"
-import { getFetch } from "../../utils/getFetch"
+import { memo } from "react"
+import { Item } from "./Item"
+// memo(componente) - memo(componente, fn evaluar condición)
 
-export const ItemList = () =>{
 
-    const productos = getFetch()
+export const ItemList = memo(  ( { productos } ) => {
+        console.log('Render ItemList')
+        return (
+            productos.map(producto =>   <Item key={producto.id}   producto={producto}/> )
+        )
+    }
+// , 
+    // ( oldProp, newProp )=> oldProp.productos.length === newProp.productos.length
+)
 
-    return(
-        productos.map(producto =>   (
-            <div key={producto.id} className='card w-25 mt-2' >
-            
-              <Link to={`/item/${producto.id}`}>
-                <div className='card-header'>
-                  Nombre: {producto.name}
-                </div>
-                <div className='card-body'>
-                  <img src={producto.foto} alt= {producto.name} className="w-100"/>
-                  Categoria: {producto.categoria}<br/>
-                  Precio: {producto.price}
-                </div>
-                <div className='card-footer'>
-                   
-                </div>
-              </Link>
 
-            </div>
-          )
-        )   
-    )
-}
