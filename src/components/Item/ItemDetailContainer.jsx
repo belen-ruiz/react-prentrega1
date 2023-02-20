@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getFetch } from "../../utils/getFetch";
+import { ItemCount } from "./ItemCount";
 
 
 
@@ -47,6 +48,7 @@ export const ItemDetailContainer = () => {
 
           <div style={{
             display: 'flex',
+            justifyContent: 'center',
             flexDirection: 'row',
             flexWrap: 'wrap'
           }} >
@@ -63,7 +65,7 @@ export const ItemDetailContainer = () => {
                       Precio: {producto.price}
                     </div>
                     <div className='card-footer'>
-                       
+                      <ItemCount />
                     </div>
                   </Link>
 

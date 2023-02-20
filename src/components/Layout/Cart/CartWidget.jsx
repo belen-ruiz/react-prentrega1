@@ -1,6 +1,6 @@
 import "../../../app.css"
 
-const CartWidget = () =>{
+const CartWidget = ({itemsOnCart}) =>{
     return(
         <div className="iconoContenedor">
             <div className="icono">
@@ -9,8 +9,8 @@ const CartWidget = () =>{
                 </svg>
             </div>
 
-            <div className="numberH" >
-                3
+            <div className="itemsOnCart" >
+                {itemsOnCart}
             </div>
         </div>
     )

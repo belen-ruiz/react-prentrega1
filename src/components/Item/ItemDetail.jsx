@@ -49,11 +49,10 @@ export const ItemDetail = () => {
                       Precio: {producto.price}
                     </div>
                     <div className='card-footer'>
-                        
+                    <ItemCount />
 
                     </div>
                   </Link>
-                  <ItemCount />
                 </div>            
           </div>
           

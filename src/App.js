@@ -7,13 +7,17 @@ import { Shop } from "./components/pages/Shop/Shop"
 import {ItemDetailContainer} from "./components/Item/ItemDetailContainer"
 import {ItemListContainer} from "./components/Item/ItemListContainer"
 import "./app.css"
+import { CartProvider } from "./context/CartContext"
 
 
 function App() {
+
   return (
 
         <BrowserRouter> 
+        <CartProvider>
           <Header/>
+          
           
           <Routes>
 
@@ -27,7 +31,7 @@ function App() {
           </Routes>
         
           <Footer />
-
+        </CartProvider>
         </BrowserRouter>
       
   );

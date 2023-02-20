@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getFetch } from "../../utils/getFetch";
+import { ItemCount } from "./ItemCount";
 import { ItemList } from "./ItemList"
 
 export const ItemListContainer = () => {
@@ -55,7 +56,8 @@ export const ItemListContainer = () => {
                         Precio: {producto.price}
                       </div>
                       <div className='card-footer'>
-                         
+                      <button>Ver detalle</button> 
+                      {/* //item detail */}
                       </div>
                     </Link>
   
