@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getFetch } from "../../utils/getFetch";
 
-
 export const ItemListContainer = () => {
 
     const [ productos, setProductos ] = useState([]);
@@ -61,12 +60,14 @@ export const ItemListContainer = () => {
   
                   </div>
                 )
-              )}
-  
-              
+              )}              
             </div>
+  
+
             
   
     )
 }
-  
+
+
+
