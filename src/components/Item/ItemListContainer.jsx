@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getFetch } from "../../utils/getFetch";
+import { ItemList } from "./ItemList"
 
 export const ItemListContainer = () => {
 
@@ -32,42 +33,50 @@ export const ItemListContainer = () => {
    
   
     return (
-      
-           loading 
-            ? 
-              <h2>Cargando...</h2> 
-            : 
-            <div style={{
-              display: 'flex',
-              flexDirection: 'row',
-              flexWrap: 'wrap'
-            }} >
-             { productos.map(producto =>   (
-                  <div key={producto.id} className='card w-25 mt-2' >
-                    <Link to={`/item/${producto.id}`}>
-                      <div className='card-header'>
-                        Nombre: {producto.name}
-                      </div>
-                      <div className='card-body'>
-                        <img src={producto.foto} alt= {producto.name} className="w-100"/>
-                        Categoria: {producto.categoria}<br/>
-                        Precio: {producto.price}
-                      </div>
-                      <div className='card-footer'>
-                         
-                      </div>
-                    </Link>
-  
-                  </div>
-                )
-              )}              
-            </div>
-  
 
-            
+      <div>
+        {(productos.length === 0) ? loading : <ItemList productos={productos} />  }
+      </div>
   
     )
 }
 
 
 
+
+// return (
+      
+//   loading 
+//    ? 
+//      <h2>Cargando...</h2> 
+//    : 
+//    <div style={{
+//      display: 'flex',
+//      flexDirection: 'row',
+//      flexWrap: 'wrap'
+//    }} >
+//     { productos.map(producto =>   (
+//          <div key={producto.id} className='card w-25 mt-2' >
+//            <Link to={`/item/${producto.id}`}>
+//              <div className='card-header'>
+//                Nombre: {producto.name}
+//              </div>
+//              <div className='card-body'>
+//                <img src={producto.foto} alt= {producto.name} className="w-100"/>
+//                Categoria: {producto.categoria}<br/>
+//                Precio: {producto.price}
+//              </div>
+//              <div className='card-footer'>
+                
+//              </div>
+//            </Link>
+
+//          </div>
+//        )
+//      )}              
+//    </div>
+
+
+   
+
+// )
