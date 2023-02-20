@@ -5,9 +5,13 @@ export const ItemCount = ({ stock, initial,  onAdd }) => {
     
     const [count, setCount] = useState(0);
 
-    const suma =()=>{ setCount(count + 1)}
-    const resta =()=>{ setCount(count - 1)}
+    const suma =()=>{
+        setCount(prevState =>{ return prevState +1 })
+    }
 
+    const resta =()=>{
+        setCount(prevState =>{ return prevState -1 })
+    }
 
     return(
         <div className="box">

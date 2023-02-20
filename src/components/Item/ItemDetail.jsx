@@ -6,7 +6,6 @@ import { getFetch } from "../../utils/getFetch";
 import { ItemCount } from "./ItemCount";
 
 
-
 export const ItemDetail = () => {
 
   const [ producto, setProducto ] = useState([])
@@ -26,6 +25,16 @@ export const ItemDetail = () => {
         .finally(()=> setLoading(false))      
   
     }
+     //else {
+    //   getFetch()
+    //     .then(res => {      
+    //       setProductos(res)
+          
+    //     })
+    //     .catch(error => console.log(error))   
+    //     .finally(()=> setLoading(false))      
+   
+    // }
   }, [id])
 
  
@@ -36,7 +45,13 @@ export const ItemDetail = () => {
             <h2>Cargando...</h2> 
           : 
 
-          <div>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'row',
+            flexWrap: 'wrap'
+          }} >
+           
                 <div key={producto.id} className='card w-25 mt-2' >
                   <Link to={`/item/${producto.id}`}>
                     <div className='card-header'>
@@ -49,10 +64,13 @@ export const ItemDetail = () => {
                       Precio: {producto.price}
                     </div>
                     <div className='card-footer'>
-                    <ItemCount />
+                      <ItemCount />
 
+                    <button>eliminar</button>
+                    <button>comprar</button>
                     </div>
                   </Link>
+
                 </div>            
           </div>
           
