@@ -1,13 +1,32 @@
+import { NavLink } from "react-router-dom";
+import { ItemListContainer } from "../../Item/ItemListContainer";
 
 
-const Shop = ()=>{
+export const Shop = ()=>{
 
     return(
 
         <div>
-            shopp
+            <h1>shopp</h1>
+
+            <nav>
+                <h2>Categorias</h2>
+                <ul>
+                    <li>
+                        <NavLink to="/shop/categoria/exterior" className="nav-link" >exterior</NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink to="/shop/categoria/interior" className="nav-link" >interior</NavLink>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <ItemListContainer /> 
+
+            
         </div>
     )
 }
 
-export { Shop };

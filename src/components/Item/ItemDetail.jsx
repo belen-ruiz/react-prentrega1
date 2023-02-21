@@ -3,12 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getFetch } from "../../utils/getFetch";
+import { Loader } from "../common/Loader";
+import { ItemCount } from "./ItemCount";
 
 
+export const ItemDetail = (onAdd) => {
 
-export const ItemDetailContainer = ({ saludo }) => {
-
-  const [ productos, setProductos ] = useState([])
+  const [ producto, setProducto ] = useState([])
   const [ loading, setLoading ] = useState(true);
   const { id } = useParams()
 
@@ -16,38 +17,53 @@ export const ItemDetailContainer = ({ saludo }) => {
     if (id) {
       getFetch()
         .then(res => {      
-          setProductos(res.filter(producto => producto.id === id))
+          setProducto(res.find(producto => producto.id === id))
            
         })
         .catch(error => console.log(error))   
         .finally(()=> setLoading(false))      
   
-    } else {
-      getFetch()
-        .then(res => {      
-          setProductos(res)
-          
-        })
-        .catch(error => console.log(error))   
-        .finally(()=> setLoading(false))      
-   
     }
+     //else {
+    //   getFetch()
+    //     .then(res => {      
+    //       setProductos(res)
+          
+    //     })
+    //     .catch(error => console.log(error))   
+    //     .finally(()=> setLoading(false))      
+   
+    // }
   }, [id])
 
- 
+//   const onAdd =()=>{
 
+//       setProducto.find((producto)=>{producto.id === id});
+    
+//       return (    <div>hola</div>
+//       )
+//       //logica para agregar items al cart
+//       // const itemQ = count
+//       // return itemQ
+
+// }
+
+onAdd =()=>{
+  return (console.log("hola"))
+}
   return (
           loading 
           ? 
-            <h2>Cargando...</h2> 
+            <Loader /> 
           : 
 
           <div style={{
             display: 'flex',
+            justifyContent: 'center',
             flexDirection: 'row',
             flexWrap: 'wrap'
           }} >
-           { productos.map(producto =>   (
+           
                 <div key={producto.id} className='card w-25 mt-2' >
                   <Link to={`/item/${producto.id}`}>
                     <div className='card-header'>
@@ -60,15 +76,17 @@ export const ItemDetailContainer = ({ saludo }) => {
                       Precio: {producto.price}
                     </div>
                     <div className='card-footer'>
-                       
+                      <ItemCount stock={producto.stock} initial="1" />
+                      
+                      <div className="addToCart">
+                            <button key={producto.id} onClick={onAdd}>Agregar al Carrito itemcount</button> 
+                            <button>eliminar</button>
+                            <button>comprar</button>
+                      </div>
                     </div>
                   </Link>
 
-                </div>
-              )
-            )}
-
-            
+                </div>            
           </div>
           
 

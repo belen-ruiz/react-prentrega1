@@ -1,6 +1,11 @@
-import "./app.css"
+import { useEffect } from "react";
+import { useState } from "react";
+import "../../../app.css"
 
 const CartWidget = () =>{
+
+    const [itemsOnCart, setItemsOnCart] = useState([]);
+
     return(
         <div className="iconoContenedor">
             <div className="icono">
@@ -9,8 +14,8 @@ const CartWidget = () =>{
                 </svg>
             </div>
 
-            <div className="numberH" >
-                3
+            <div className="itemsOnCart" >
+                {itemsOnCart.length > 0 ? itemsOnCart : []}
             </div>
         </div>
     )
