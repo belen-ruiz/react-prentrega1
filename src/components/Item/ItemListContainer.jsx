@@ -32,15 +32,13 @@ export const ItemListContainer = () => {
     }
   }, [categoria])
 
- 
-
   return (
 
-    loading 
+              loading 
             ? 
               <Loader />
             : 
-            <div style={{
+              <div style={{
               display: 'flex',
               flexDirection: 'row',
               flexWrap: 'wrap'

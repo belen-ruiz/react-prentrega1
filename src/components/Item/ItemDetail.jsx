@@ -65,10 +65,9 @@ export const ItemDetail = () => {
                       Precio: {producto.price}
                     </div>
                     <div className='card-footer'>
-                      <ItemCount />
-
-                    <button>eliminar</button>
-                    <button>comprar</button>
+                      <ItemCount stock={producto.stock} initial="1" />
+                      <button>eliminar</button>
+                      <button>comprar</button>
                     </div>
                   </Link>
 

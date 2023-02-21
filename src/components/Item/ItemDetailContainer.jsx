@@ -1,16 +1,15 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Loader } from "../common/Loader";
 import { ItemDetail } from "./ItemDetail";
 
 
 export const ItemDetailContainer = () => {
 
+      return (
+            <ItemDetail /> 
+          )
 
-  return (
-
-          <ItemDetail />          
-
-  )
 }
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import { useEffect, useState } from "react";

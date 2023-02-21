@@ -5,8 +5,19 @@ export const CartContainer = () =>{
 
     return (
 
-        <div>
-            <CartWidget />
-        </div>
+        <>
+            {<CartWidget />}
+        </>
     )
+}
+
+
+export const Loader =(loading)=>{
+    return(
+        <>
+          {loading && <h1>loading...........</h1>}
+        </>
+        
+    )
+
 }

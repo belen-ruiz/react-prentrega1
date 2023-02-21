@@ -15,9 +15,10 @@ export const ItemCount = ({ stock, initial,  onAdd  }) => {
     }
     
     onAdd =()=>{
-        const arrayCart = count
+        //logica para agregar items al cart
+        const itemQ = count
+        return itemQ
     }
-
 
     return(
         <div className="box">
@@ -28,9 +29,8 @@ export const ItemCount = ({ stock, initial,  onAdd  }) => {
             </div>
 
             <div className="addToCart">
-                <button onClick={onAdd}>Agregar al Carrito</button>
+                <button onClick={onAdd}>Agregar al Carrito</button> 
             </div>
-
         </div>
     )
 
