@@ -14,11 +14,18 @@ export const ItemCount = ({ stock, initial,  onAdd  }) => {
         setCount(prevState =>{ return prevState -1 })
     }
     
-    onAdd =()=>{
-        //logica para agregar items al cart
-        const itemQ = count
-        return itemQ
-    }
+
+    // onAdd =()=>{
+
+    //     const prodAgregado = productos.find((producto)=>{producto.id == producto.id})
+
+    //     console.log(prodAgregado)
+
+
+    //     //logica para agregar items al cart
+    //     // const itemQ = count
+    //     // return itemQ
+    // }
 
     return(
         <div className="box">
@@ -26,10 +33,6 @@ export const ItemCount = ({ stock, initial,  onAdd  }) => {
                 <div className="counterItems op" onClick={suma}> + </div>
                 <div className="counterItems" value="itemsOnCart"> {count} </div>
                 <div className="counterItems op" onClick={resta} > - </div>
-            </div>
-
-            <div className="addToCart">
-                <button onClick={onAdd}>Agregar al Carrito</button> 
             </div>
         </div>
     )

@@ -7,7 +7,7 @@ import { Loader } from "../common/Loader";
 import { ItemCount } from "./ItemCount";
 
 
-export const ItemDetail = () => {
+export const ItemDetail = (onAdd) => {
 
   const [ producto, setProducto ] = useState([])
   const [ loading, setLoading ] = useState(true);
@@ -38,8 +38,21 @@ export const ItemDetail = () => {
     // }
   }, [id])
 
- 
+//   const onAdd =()=>{
 
+//       setProducto.find((producto)=>{producto.id === id});
+    
+//       return (    <div>hola</div>
+//       )
+//       //logica para agregar items al cart
+//       // const itemQ = count
+//       // return itemQ
+
+// }
+
+onAdd =()=>{
+  return (console.log("hola"))
+}
   return (
           loading 
           ? 
@@ -66,8 +79,12 @@ export const ItemDetail = () => {
                     </div>
                     <div className='card-footer'>
                       <ItemCount stock={producto.stock} initial="1" />
-                      <button>eliminar</button>
-                      <button>comprar</button>
+                      
+                      <div className="addToCart">
+                            <button key={producto.id} onClick={onAdd}>Agregar al Carrito itemcount</button> 
+                            <button>eliminar</button>
+                            <button>comprar</button>
+                      </div>
                     </div>
                   </Link>
 

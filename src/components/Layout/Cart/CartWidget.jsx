@@ -1,6 +1,11 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import "../../../app.css"
 
-const CartWidget = ({itemsOnCart}) =>{
+const CartWidget = () =>{
+
+    const [itemsOnCart, setItemsOnCart] = useState([]);
+
     return(
         <div className="iconoContenedor">
             <div className="icono">
@@ -10,7 +15,7 @@ const CartWidget = ({itemsOnCart}) =>{
             </div>
 
             <div className="itemsOnCart" >
-                {itemsOnCart}
+                {itemsOnCart.length > 0 ? itemsOnCart : []}
             </div>
         </div>
     )
