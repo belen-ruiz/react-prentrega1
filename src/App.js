@@ -12,6 +12,8 @@ import { CartProvider } from "./context/CartContext"
 
 function App() {
 
+
+
   return (
 
         <BrowserRouter> 
@@ -28,6 +30,8 @@ function App() {
             <Route path={"shop/categoria/:categoria"} element={<ItemListContainer />} />
             <Route path={"/item/:id"} element={<ItemDetailContainer />} />
           </Routes>
+
+          
         
         
           <Footer />

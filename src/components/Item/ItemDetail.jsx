@@ -2,18 +2,27 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 import { getFetch } from "../../utils/getFetch";
 import { Loader } from "../common/Loader";
 import { ItemCount } from "./ItemCount";
 
 
-export const ItemDetail = (onAdd) => {
+export const ItemDetail = ({}) => {
 
+  const [isCount, setIsCount] = useState(true)
   const [ producto, setProducto ] = useState([])
   const [ loading, setLoading ] = useState(true);
 
-
   const { id } = useParams()
+
+  const { agregarCarrito } = useCartContext()
+
+  const onAdd = (cant)=>{
+    agregarCarrito( { ...producto, cantidad: cant } )
+    setIsCount(false)
+}  
+
 
   useEffect(()=>{
     if (id) {
@@ -26,37 +35,13 @@ export const ItemDetail = (onAdd) => {
         .finally(()=> setLoading(false))      
   
     }
-     //else {
-    //   getFetch()
-    //     .then(res => {      
-    //       setProductos(res)
-          
-    //     })
-    //     .catch(error => console.log(error))   
-    //     .finally(()=> setLoading(false))      
-   
-    // }
   }, [id])
 
-//   const onAdd =()=>{
 
-//       setProducto.find((producto)=>{producto.id === id});
-    
-//       return (    <div>hola</div>
-//       )
-//       //logica para agregar items al cart
-//       // const itemQ = count
-//       // return itemQ
-
-// }
-
-onAdd =()=>{
-  return (console.log("hola"))
-}
   return (
           loading 
           ? 
-            <Loader /> 
+          <Loader /> 
           : 
 
           <div style={{
@@ -77,14 +62,10 @@ onAdd =()=>{
                       Mas Info: {producto.info}<br/>
                       Precio: {producto.price}
                     </div>
-                    <div className='card-footer'>
-                      <ItemCount stock={producto.stock} initial="1" />
-                      
-                      <div className="addToCart">
-                            <button key={producto.id} onClick={onAdd}>Agregar al Carrito itemcount</button> 
-                            <button>eliminar</button>
-                            <button>comprar</button>
-                      </div>
+                    <div className='card-footer addToCart'>
+                      <ItemCount onAdd={onAdd}  initial={1} stock={producto.stock}  />
+                      <button>eliminar</button>
+                      <button>comprar</button>
                     </div>
                   </Link>
 
