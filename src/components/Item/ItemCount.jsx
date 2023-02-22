@@ -20,7 +20,6 @@ export const ItemCount = ({ stock=10, initial=1, onAdd }) => {
 
     const handleOnAdd =()=>{
         onAdd(count)
-        console.log(count)
     }
 
     return(

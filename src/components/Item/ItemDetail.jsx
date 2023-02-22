@@ -1,35 +1,26 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, NavLink, BrowserRouter, Route, Routes } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import { getFetch } from "../../utils/getFetch";
 import { Loader } from "../common/Loader";
 import { ItemCount } from "./ItemCount";
+import { ItemListContainer } from "./ItemListContainer";
 
 
 export const ItemDetail = ({ producto }) => {
 
-  const [isCount, setIsCount] = useState(true);
-  // const [ producto, setProducto ] = useState([]);
-  const [ loading, setLoading ] = useState(false);
+  const [isCount, setIsCount] = useState(true)
   const { agregarCarrito } = useCartContext()
 
 
-  const onAdd = (count)=>{
-    console.log( "este es el onadd + count:" + count );
-    agregarCarrito( { ...producto, cantidad: count } );
-    setIsCount(false)
-}  
-
-console.log("este es el agregarcarr + prod:" + producto);
+  const onAdd = (cant)=>{
+    agregarCarrito( { ...producto, cantidad: cant } )
+    
+  }  
 
   return (
-          loading 
-          ? 
-          <Loader /> 
-          : 
-
           <div style={{
             display: 'flex',
             justifyContent: 'center',
@@ -50,12 +41,9 @@ console.log("este es el agregarcarr + prod:" + producto);
                     </div>
                     <div className='card-footer addToCart'>
                       <ItemCount onAdd={ onAdd }  initial={1} stock={producto.stock}  />
-                      <button>eliminar</button>
-                      <button>comprar</button>
-                    </div>
-                 
+                    </div>  
+                </div>    
 
-                </div>            
           </div>
           
 

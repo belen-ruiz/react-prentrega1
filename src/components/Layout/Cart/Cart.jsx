@@ -3,30 +3,31 @@ import { useEffect } from "react";
 import { useContext } from "react"
 import { CartProvider } from "../../../context/CartContext"
 
-export const Cart =(productos)=>{
 
-    const {itemsOnCart, removeItem, clearCart} = useContext(CartProvider);
+// const Cart =(productos)=>{
 
-    const [total, setTotal] = useState(0);
+//     const {cartList, removeItem, clearCart} = useContext(CartProvider);
 
-    useEffect(() => {
-        let newTotal = 0;
-        productos.map((item) => {
-            newTotal += item.price * item.count;
-        });
-        setTotal(newTotal);
+//     const [total, setTotal] = useState(0);
 
-    }, [itemsOnCart]);
+//     useEffect(() => {
+//         let newTotal = 0;
+//         productos.map((producto) => {
+//             newTotal += producto.price * producto.count;
+//         });
+//         setTotal(newTotal);
+
+//     }, [cartList]);
 
 
-    return(
-        <>
+//     return(
+//         <>
         
-        <div>
-            cart
-        </div>
+//         <div>
+//             cart
+//         </div>
         
-        </>
-    )
+//         </>
+//     )
 
-}
+// }

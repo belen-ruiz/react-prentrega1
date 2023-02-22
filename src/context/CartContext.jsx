@@ -12,25 +12,24 @@ export const useCartContext =()=> useContext(CartContext)
 
 export const CartProvider = ({children})=>{
 
-    const [ cartList, setCartList] = useState([1]);
+
+    const [ cartList, setCartList] = useState([]);
     const { id } = useParams();
     
     const agregarCarrito = (newProducto) =>{
-        
+        //newproducto es el PROD, CANT
         if (id) {
             getFetch()
               .then(res => {      
                 setCartList(res.find(producto => producto.id === id))
               })              
         };
-
-        console.log(newProducto );
-
-
+        
         setCartList([
             ...cartList, 
             newProducto
         ]);
+        
         console.log(cartList );
     };
 

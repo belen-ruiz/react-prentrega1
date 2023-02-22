@@ -17,11 +17,12 @@ export const ItemDetailContainer = () => {
       useEffect(()=>{
             if (id) {
               getFetch()
-                .then(res => {      
-                  setProducto(res.filter(producto => producto.id === id))
-                })
-                .catch(error => console.log(error))
-                .finally(()=> setLoading(false))      
+              .then(res => {      
+                setProducto(res.find(producto => producto.id === id))
+              })
+              
+              .catch(error => console.log(error))
+              .finally(setLoading(false))
             }
           }, [id])
 
