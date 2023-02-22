@@ -1,6 +1,6 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import { getFetch } from "../../utils/getFetch";
@@ -8,35 +8,20 @@ import { Loader } from "../common/Loader";
 import { ItemCount } from "./ItemCount";
 
 
-export const ItemDetail = ({}) => {
+export const ItemDetail = ({ producto }) => {
 
-  const [isCount, setIsCount] = useState(true)
-  const [ producto, setProducto ] = useState([])
-  const [ loading, setLoading ] = useState(true);
-
-  const { id } = useParams()
-
+  const [isCount, setIsCount] = useState(true);
+  // const [ producto, setProducto ] = useState([]);
+  const [ loading, setLoading ] = useState(false);
   const { agregarCarrito } = useCartContext()
 
+
   const onAdd = (cant)=>{
+    console.log( "este es el onadd + count:" + cant );
     agregarCarrito( { ...producto, cantidad: cant } )
+    console.log("este es el agregarcarr + prod:" + producto)
     setIsCount(false)
 }  
-
-
-  useEffect(()=>{
-    if (id) {
-      getFetch()
-        .then(res => {      
-          setProducto(res.find(producto => producto.id === id))
-           
-        })
-        .catch(error => console.log(error))   
-        .finally(()=> setLoading(false))      
-  
-    }
-  }, [id])
-
 
   return (
           loading 
@@ -63,7 +48,7 @@ export const ItemDetail = ({}) => {
                       Precio: {producto.price}
                     </div>
                     <div className='card-footer addToCart'>
-                      <ItemCount onAdd={onAdd}  initial={1} stock={producto.stock}  />
+                      <ItemCount onAdd={ onAdd }  initial={1} stock={producto.stock}  />
                       <button>eliminar</button>
                       <button>comprar</button>
                     </div>

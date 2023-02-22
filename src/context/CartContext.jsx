@@ -10,7 +10,6 @@ const CartContext = createContext([])
 export const useCartContext =()=> useContext(CartContext)
 
 
-
 export const CartProvider = ({children})=>{
 
     const [ cartList, setCartList] = useState([]);
@@ -23,10 +22,11 @@ export const CartProvider = ({children})=>{
               .then(res => {      
                 setCartList(res.find(producto => producto.id === id))
               })              
-        }
+        };
 
         setCartList([...cartList, newProducto]);
-    }
+        console.log(cartList, newProducto );
+    };
 
     // cantidad total
     // precio total 
@@ -34,7 +34,7 @@ export const CartProvider = ({children})=>{
     // eliminar item por id
 
 
-    const clearCart = ()=> setCartList ([])
+    const clearCart = ()=> setCartList ([]);
 
 
     return(
