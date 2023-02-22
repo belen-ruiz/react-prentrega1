@@ -12,7 +12,7 @@ export const useCartContext =()=> useContext(CartContext)
 
 export const CartProvider = ({children})=>{
 
-    const [ cartList, setCartList] = useState([]);
+    const [ cartList, setCartList] = useState([1]);
     const { id } = useParams();
     
     const agregarCarrito = (newProducto) =>{
@@ -24,9 +24,16 @@ export const CartProvider = ({children})=>{
               })              
         };
 
-        setCartList([...cartList, newProducto]);
-        console.log(cartList, newProducto );
+        console.log(newProducto );
+
+
+        setCartList([
+            ...cartList, 
+            newProducto
+        ]);
+        console.log(cartList );
     };
+
 
     // cantidad total
     // precio total 
