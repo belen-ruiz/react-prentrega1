@@ -8,11 +8,10 @@ import {ItemDetailContainer} from "./components/Item/ItemDetailContainer"
 import {ItemListContainer} from "./components/Item/ItemListContainer"
 import "./app.css"
 import { CartProvider } from "./context/CartContext"
+import { Cart } from "./components/Layout/Cart/Cart"
 
 
 function App() {
-
-
 
   return (
 
@@ -29,6 +28,8 @@ function App() {
             <Route path={"shop/categoria"} element={<ItemListContainer />} />
             <Route path={"shop/categoria/:categoria"} element={<ItemListContainer />} />
             <Route path={"/item/:id"} element={<ItemDetailContainer />} />
+            <Route path={"/cart"} element={<Cart />} />
+
           </Routes>
 
           

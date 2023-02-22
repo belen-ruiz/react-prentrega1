@@ -30,7 +30,7 @@ export const CartProvider = ({children})=>{
             newProducto
         ]);
         
-        console.log(cartList );
+        console.log(cartList);
     };
 
 

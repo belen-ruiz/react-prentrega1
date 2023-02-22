@@ -5,6 +5,7 @@ import { useParams, NavLink, BrowserRouter, Route, Routes } from "react-router-d
 import { useCartContext } from "../../context/CartContext";
 import { getFetch } from "../../utils/getFetch";
 import { Loader } from "../common/Loader";
+import { Cart } from "../Layout/Cart/Cart";
 import { ItemCount } from "./ItemCount";
 import { ItemListContainer } from "./ItemListContainer";
 
@@ -28,7 +29,7 @@ export const ItemDetail = ({ producto }) => {
             flexWrap: 'wrap'
           }} >
            
-                <div key={producto.id} className='card w-25 mt-2' >
+                <div className='card w-25 mt-2' >
                   
                     <div className='card-header'>
                       Nombreee: {producto.name}
@@ -41,6 +42,7 @@ export const ItemDetail = ({ producto }) => {
                     </div>
                     <div className='card-footer addToCart'>
                       <ItemCount onAdd={ onAdd }  initial={1} stock={producto.stock}  />
+                      <NavLink to="/cart" className="nav-link" >VER CARRITO</NavLink>
                     </div>  
                 </div>    
 
