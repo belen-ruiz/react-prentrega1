@@ -19,8 +19,7 @@ function App() {
         <CartProvider>
 
           <Header/>
-          
-          
+
           <Routes>
             <Route path={"/"} element={ <Shop />} />
             <Route path={"/home"} element={ <Home />} />

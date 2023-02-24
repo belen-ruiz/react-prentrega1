@@ -2,7 +2,7 @@ import React,{ useState, useEffect } from "react"
 import { getFetch } from "../../utils/getFetch";
 
 
-export const ItemCount = ({ stock=10, initial=1, onAdd }) => {
+export const ItemCount = ({ stock, initial, onAdd }) => {
     
     const [count, setCount] = useState(initial);
     

@@ -6,33 +6,6 @@ import { productos } from "../../../utils/products";
 import { useCartContext } from "../../../context/CartContext";
 
 
-//  const Cart =(productos)=>{
-
-
-//     const [total, setTotal] = useState(0);
-
-//     useEffect(() => {
-//         let newTotal = 0;
-//         productos.map((item) => {
-//             newTotal += item.price * item.count;
-//         });
-//         setTotal(newTotal);
-
-//     }, []);
-
-
-//     return(
-//         <>
-        
-//         <div>
-//             cart
-//         </div>
-        
-//         </>
-//     )
-
-// }
-
 const Cart = () => {
 
     const { cartList, clearCart } = useCartContext() 
