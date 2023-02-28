@@ -5,26 +5,29 @@ import { CartProvider } from "../../../context/CartContext"
 import { productos } from "../../../utils/products";
 import { useCartContext } from "../../../context/CartContext";
 
+            
 
 const Cart = () => {
 
-    const { cartList, clearCart } = useCartContext() 
+    const { cartList, clearCart, precioTotal, eliminarProducto } = useCartContext() 
 
     const [formData, setFormData] = useState( {
-            name: '',
-            phone: '',
-            email:'',
-            repetirEmail: ''
-        } )        
-    const insertarOrder = (evt) => {
-            evt.preventDefault()
+            name: "",
+            phone: "",
+            email:"",
+            repetirEmail: ""
+        } )   
+        
+    const insertarOrder = (e) => {
+            e.preventDefault()
             const order = {}
             // validar formData
             order.buyer = formData
             order.isActive = true
             order.items = cartList.map( ({id, name, price}) => ({id, name, price}))
             order.total = 6500
-    
+            return
+            (console.log(order))
     
             //Firestore
             // const db = getFirestore()
@@ -55,25 +58,22 @@ const Cart = () => {
             // console.log(order)
         }
     
-    const handleOnChange = (evt) => {
-            // console.log(evt.target.name) // nombre del input 
-            // console.log(evt.target.value) // valor del input
+    const handleOnChange = (e) => {
+            // console.log(e.target.name) // nombre del input (phone)
+            //console.log(e.target.value) // valor del input  (123455)
     
             setFormData({
                 ...formData,
-                [evt.target.name]: evt.target.value
+                [e.target.name]: e.target.value
             })
         }
     
-    console.log(cartList)
-
-
         return (
             <div>
                 { cartList.map(producto => (
                     <div key={producto.id}>
                         <img src={producto.foto} style={{width: 100}} />
-                        Nombre: {producto.name} - Cantidad: {producto.cantidad} - Precio: {producto.price}
+                        Nombre: {producto.name} - Cantidad: {producto.cantidad} - Precio: ${producto.price}
                     </div>
                       
                 ))}
@@ -86,7 +86,7 @@ const Cart = () => {
                         onChange={handleOnChange} 
                         value={formData.name}
     
-                    /><br />
+                    />
                     <input 
                         type="text" 
                         name="phone"         
@@ -94,7 +94,7 @@ const Cart = () => {
                         onChange={handleOnChange} 
                         value={formData.phone}
     
-                    /><br />
+                    />
                     <input 
                         type="text" 
                         name="email"         
@@ -102,7 +102,7 @@ const Cart = () => {
                         onChange={handleOnChange} 
                         value={formData.email}
     
-                    /><br />
+                    />
                     <input 
                         type="text" 
                         name="repetirEmail"  
@@ -110,7 +110,7 @@ const Cart = () => {
                         onChange={handleOnChange} 
                         value={formData.repetirEmail}
     
-                    /><br />
+                    />
     
                     <button className="btn btn-outline-success" type="submit">Generar la orden</button>
                 </form>
@@ -120,6 +120,6 @@ const Cart = () => {
         )
     }
     
-    export {Cart}
+    export { Cart }
     
 

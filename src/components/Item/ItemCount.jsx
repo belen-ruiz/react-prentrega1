@@ -1,11 +1,12 @@
 import React,{ useState, useEffect } from "react"
+import { useCartContext } from "../../context/CartContext";
 import { getFetch } from "../../utils/getFetch";
 
 
 export const ItemCount = ({ stock, initial, onAdd }) => {
     
     const [count, setCount] = useState(initial);
-    
+
 
     const suma =()=>{
         if (count < stock)
