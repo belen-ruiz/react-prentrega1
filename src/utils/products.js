@@ -1,7 +1,7 @@
 
 
 
-import { getFirestore, doc, getDoc, getDocs, collection } from "firebase/firestore";
+import { getFirestore, doc, getDoc, getDocs, addDoc, collection } from "firebase/firestore";
 
 
 const getAll = async () => {
@@ -13,6 +13,7 @@ const getAll = async () => {
     return producto
 } 
 
+
 const get = async (id) => {
     const db = getFirestore();
     const productDoc = doc(db, "items", id);
@@ -21,6 +22,7 @@ const get = async (id) => {
 
     return producto
 }
+
 
 export const productosServicios = { getAll, get };
 

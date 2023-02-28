@@ -16,6 +16,7 @@ export const ItemListContainer = () => {
   const { categoria } = useParams();
 
   useEffect(()=>{
+    setLoading(true)
     if (categoria){
       productosServicios.getAll()
       .then(res => {setProductos(res.filter(producto => producto.categoria === categoria))})
