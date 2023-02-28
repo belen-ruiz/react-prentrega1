@@ -1,7 +1,7 @@
 import { memo } from "react"
 import { Link } from "react-router-dom"
 
-export const Item =  memo(  ({producto}) => {
+export const Item =  memo(  ({ producto }) => {
 
     
     return (

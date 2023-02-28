@@ -1,4 +1,5 @@
 
+import "./app.css"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import {Header } from "./components/Layout/Header/Header"
 import {Footer } from "./components/Layout/Footer/Footer"
@@ -6,7 +7,6 @@ import {Home} from "../src/components/pages/Home/Home"
 import { Shop } from "./components/pages/Shop/Shop"
 import {ItemDetailContainer} from "./components/Item/ItemDetailContainer"
 import {ItemListContainer} from "./components/Item/ItemListContainer"
-import "./app.css"
 import { CartProvider } from "./context/CartContext"
 import { Cart } from "./components/Layout/Cart/Cart"
 
