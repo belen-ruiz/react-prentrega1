@@ -3,6 +3,7 @@ import { useCartContext } from "../../context/CartContext";
 import { getFetch } from "../../utils/getFetch";
 
 
+
 export const ItemCount = ({ stock, initial, onAdd }) => {
     
     const [count, setCount] = useState(initial);
@@ -17,12 +18,14 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
         if (count > initial)
         {setCount(count - 1)}
     }
-    
+
 
     const handleOnAdd =()=>{
-        onAdd(count)
+        onAdd(count);
+        
     }
 
+      
     return(
         <div className="box">
             <div className="counter">

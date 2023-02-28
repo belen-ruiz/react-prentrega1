@@ -1,8 +1,8 @@
 
-import { CartContainer } from "../Cart/CartContainer"
 import { Logo } from "./Logo"
 import {NavBar} from "./NavBar"
 import {LogIn} from "./LogIn"
+import {CartContainer} from "../../Cart/CartContainer"
 
 export const Header = () => {
 
@@ -13,6 +13,7 @@ export const Header = () => {
             <NavBar />
             <LogIn />
             <CartContainer />
+
         </header>
 
 

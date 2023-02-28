@@ -8,7 +8,7 @@ import { Shop } from "./components/pages/Shop/Shop"
 import {ItemDetailContainer} from "./components/Item/ItemDetailContainer"
 import {ItemListContainer} from "./components/Item/ItemListContainer"
 import { CartProvider } from "./context/CartContext"
-import { Cart } from "./components/Layout/Cart/Cart"
+import { Cart } from "./components/Cart/Cart"
 
 
 function App() {

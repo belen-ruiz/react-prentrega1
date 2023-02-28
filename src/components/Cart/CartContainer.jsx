@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Cart } from "./Cart";
 import {CartWidget} from "./CartWidget"
-import {useCartContext} from "../../../context/CartContext"
 
 
 export const CartContainer = () =>{

@@ -5,9 +5,10 @@ import { useParams, NavLink, BrowserRouter, Route, Routes } from "react-router-d
 import { useCartContext } from "../../context/CartContext";
 import { getFetch } from "../../utils/getFetch";
 import { Loader } from "../common/Loader";
-import { Cart } from "../Layout/Cart/Cart";
+import { Cart } from "../Cart/Cart";
 import { ItemCount } from "./ItemCount";
 import { ItemListContainer } from "./ItemListContainer";
+
 
 
 export const ItemDetail = ({ producto }) => {
@@ -18,8 +19,9 @@ export const ItemDetail = ({ producto }) => {
 
   const onAdd = (cant)=>{
     agregarCarrito( { ...producto, cantidad: cant } )
-    
+
   }  
+ 
 
   return (
           <div style={{
@@ -42,7 +44,7 @@ export const ItemDetail = ({ producto }) => {
                     </div>
                     <div className='card-footer addToCart'>
                       <ItemCount onAdd={ onAdd }  initial={1} stock={producto.stock}  />
-                      <NavLink to="/cart" className="nav-link" >VER CARRITO</NavLink>
+                      <NavLink to="/cart" className="nav-link" >Terminar mi compra</NavLink>
                     </div>  
                 </div>    
 

@@ -14,24 +14,6 @@ export const CartProvider = ({children})=>{
 
 
     const [ cartList, setCartList] = useState([]);
-    // const { id } = useParams();
-    
-    // const agregarCarrito = ( newProducto ) =>{
-
-    //     //newproducto es el PROD, CANT
-    //     if (id) {
-    //         getFetch()
-    //           .then(res => {      
-    //             setCartList(res.find(producto => producto.id === id))
-    //           })              
-    //     };
-        
-    //     setCartList([
-    //         ...cartList, 
-    //         newProducto
-    //     ]);
-        
-    // };
 
     const agregarCarrito = (newProducto) =>{
         const id = cartList.findIndex(producto => producto.id === newProducto.id)
@@ -54,23 +36,22 @@ export const CartProvider = ({children})=>{
 
         console.log(cartList);
         
-        }, [cartList]);
+    }, [cartList]);
+
+    //is in cart
 
     // cantidad total
 
     const cantidadTotal = () => cartList.reduce( (count, producto) => count += producto.cantidad, 0)
 
-    console.log(cantidadTotal)
-
     // precio total 
 
     const precioTotal = () => cartList.reduce( (count, producto) => count += (producto.cantidad*producto.price), 0)
 
-    console.log(precioTotal)
 
     // eliminar item por id
 
-    const eliminarProducto = (id) => setCartList(cartList.filter(prod => prod.id !== id))
+    const eliminarProducto = (id) => setCartList(cartList.filter(producto => producto.id !== id))
 
 
     const clearCart = ()=> setCartList ([]);

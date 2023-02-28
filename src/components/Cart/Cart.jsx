@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { useEffect } from "react";
 import { useContext } from "react"
-import { CartProvider } from "../../../context/CartContext"
-import { productos } from "../../../utils/products";
-import { useCartContext } from "../../../context/CartContext";
+import { CartProvider } from "../../context/CartContext"
+import { productos } from "../../utils/products";
+import { useCartContext } from "../../context/CartContext";
 
             
 
@@ -67,16 +67,28 @@ const Cart = () => {
                 [e.target.name]: e.target.value
             })
         }
+
+
+    const handleOnClick = (id)=>{
+        eliminarProducto(id)
+    }
     
         return (
             <div>
                 { cartList.map(producto => (
-                    <div key={producto.id}>
+                
+                   <div key={producto.id}>
                         <img src={producto.foto} style={{width: 100}} />
-                        Nombre: {producto.name} - Cantidad: {producto.cantidad} - Precio: ${producto.price}
+                        Nombre: {producto.name} - x{producto.cantidad}u. - Precio: ${producto.price}
+                        {/* <button onClick={handleOnClick(producto.id)}>Eliminar producto</button> */}
+                        
                     </div>
-                      
+                
                 ))}
+                <div>
+                            Total: ${precioTotal()}
+
+                </div>
     
                 <form onSubmit={insertarOrder} >
                     <input 

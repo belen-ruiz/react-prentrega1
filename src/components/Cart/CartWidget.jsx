@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useCartContext } from "../../../context/CartContext"
-import "../../../app.css"
+import { useCartContext } from "../../context/CartContext"
+import "../../app.css"
 import { Cart } from "./Cart";
 import { Link } from "react-router-dom";
 
 const CartWidget = () =>{
 
-    const { cartList } = useCartContext() 
+    const { cartList, cantidadTotal } = useCartContext() 
 
     return(
         <Link to={"/cart"}>
@@ -18,12 +18,11 @@ const CartWidget = () =>{
                     </svg>
                 </div>
 
-                {/* <div>
-                        {cartList.length > 0 && cartList }
-                    <div className="cartList" >
-                        0
+                <div>
+                    <div className="cartCount" >
+                    {cartList.length > 0 && cantidadTotal() } 
                     </div>
-                </div>  */}
+                </div> 
             </div>
         </Link>
     )
