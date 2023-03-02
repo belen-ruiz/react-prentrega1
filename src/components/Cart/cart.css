@@ -1,0 +1,9 @@
+.iconoContenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconoContenedor .icono .cartWigdet{
+    color: #808080;
+}

@@ -6,16 +6,17 @@ export const NavBar = () =>{
             <div className="pagesBox">
                 <ul className="pages">
                     <li>
-                        <NavLink to="/home" className="page" >Home</NavLink>
+                        <NavLink to="/home" className={({ isActive })=> isActive  ? 'page page-active' : ' page'} >Home</NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/shop" className="page" >shop</NavLink>
+                        <NavLink to="/shop" className={({ isActive })=> isActive  ? 'page page-active' : 'page'} >Store</NavLink>
                     </li>
                 </ul>
             </div>               
     )
 }
+
 
 
 // import { Link, NavLink } from 'react-router-dom';

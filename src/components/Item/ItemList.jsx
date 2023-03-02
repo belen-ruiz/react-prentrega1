@@ -8,8 +8,6 @@ export const ItemList = memo(  ( { productos } ) => {
             productos.map(producto => <Item key={producto.id} producto={producto}/> )
         )
     }
-// , 
-    // ( oldProp, newProp )=> oldProp.productos.length === newProp.productos.length
 )
 
 

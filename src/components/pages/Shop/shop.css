@@ -1,0 +1,43 @@
+.categoriasContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    padding: 4rem;
+    margin: auto;
+
+}
+
+.categoriasContainer h1{
+    display: flex;
+    justify-content: center;
+
+}
+
+.categoriasContainer nav{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.categoriasContainer nav ul{
+    display: flex;
+    gap: 3rem;
+    padding: 0;
+    list-style: none;
+
+}
+
+.categoriasContainer nav ul .nav-link{
+    padding: 1rem 2rem;
+    border: 1px solid green;
+    color: green;
+
+}
+
+.categoriasContainer nav ul .navlink-active{
+    background-color: green;
+    color: whitesmoke;
+
+}

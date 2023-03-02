@@ -1,5 +1,5 @@
 
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import { useState } from "react";
 import { useParams, NavLink, BrowserRouter, Route, Routes } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
@@ -24,27 +24,26 @@ export const ItemDetail = ({ producto }) => {
  
 
   return (
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'row',
-            flexWrap: 'wrap'
-          }} >
-           
-                <div className='card w-25 mt-2' >
-                  
-                    <div className='card-header'>
-                      Nombreee: {producto.name}
+          <div className="product">
+                <div className='productCardDetail' >
+
+                    <div className='productCard-header'>
+                      {producto.name}
                     </div>
-                    <div className='card-body'>
-                      <img src={producto.foto} alt='foto' className="w-100"/>
+
+                    <div className='productCard-body'>
+                      <img src={producto.foto} alt='foto' className="imagenDetail"/>
                       Categoria: {producto.categoria}<br/>
-                      Mas Info: {producto.info}<br/>
+                      Descripcion: {producto.description}<br/>
                       Precio: {producto.price}
                     </div>
-                    <div className='card-footer addToCart'>
+
+                    <div className='addToCart'>
                       <ItemCount onAdd={ onAdd }  initial={1} stock={producto.stock}  />
-                      <NavLink to="/cart" className="nav-link" >Terminar mi compra</NavLink>
+                    </div>
+                    
+                    <div> 
+                      <NavLink to="/cart" className="buttonGreenOutline" >Terminar mi compra</NavLink>
                     </div>  
                 </div>    
 

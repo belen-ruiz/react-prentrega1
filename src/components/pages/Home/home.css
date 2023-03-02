@@ -1,0 +1,36 @@
+.buttonGreen{
+    cursor: pointer;
+    background-color: green;
+    color: whitesmoke;
+    padding: 0.8rem 1.5rem;
+    width: fit-content;
+    margin-top: 1rem;
+}
+
+.buttonGreenOutline{
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: green;
+    padding: 0.8rem 1.5rem;
+    width: fit-content;
+    margin-top: 1rem;
+}
+
+.homeContainer{
+    padding: 5rem;
+}
+
+.homeContainer h1{
+    font-size: 6rem;
+}
+
+.homeContainer h1 span{
+    color: green;
+    font-size: 7rem;
+}
+
+.homeContainer h2{
+    font-size: 1rem;
+}
+
+

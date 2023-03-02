@@ -1,31 +1,28 @@
+import { getFirestore, collection, addDoc } from "firebase/firestore"
 import { useState } from "react"
-import { useEffect } from "react";
-import { useCartContext } from "../../context/CartContext";
-import { productosServicios } from "../../utils/products";
-import { getFirestore, doc, getDoc, getDocs, addDoc, collection } from "firebase/firestore";
-
+import { useCartContext } from "../../context/CartContext"
 
 
 
 const Cart = () => {
 
-    const { cartList, clearCart, precioTotal, eliminarProducto } = useCartContext() 
-    const {orderId, setOrderId} = useState()
+    const { cartList, clearCart, precioTotal, eliminarProducto } = useCartContext()
 
-    const [formData, setFormData] = useState( {
+    const [formData, setFormData] = useState({
             name: "",
             phone: "",
             email:"",
     } )   
     
-    const sendOrder = () => {
-            
-        const order = {
+    const sendOrder = (evt) => {
+            evt.preventDefault()
+            const order = {}
 
-        buyer: {name: "belen", phone: 11111, email: "belen@gmail.com"},
-        items: [{id: 3, name: "potus", price: 3000 }],
-        total: 3000
-        };
+            order.buyer = formData
+            order.isActive = true
+            order.items = cartList.map( ({id, name, price}) => ({id, name, price}))
+            order.total = precioTotal()
+    
 
         console.log(order)
 
@@ -105,39 +102,3 @@ const Cart = () => {
     
     export { Cart }
     
-
-
-
-    // const sendOrder = () => {
-            
-    //     const order = {}
-
-    //     order.buyer = formData
-    //     order.items = cartList.map( ({id, name, price}) => ({id, name, price}))
-    //     order.total = precioTotal()
-            
-    //     console.log(order)
-    //     return
-    // }
-        
-    //     useEffect(()=>{
-    //         const add = async () =>{
-    //         const db = getFirestore()
-    //         const ordersCollection = collection(db, 'orders')
-                
-    //         await addDoc(ordersCollection)
-                
-    //         .then(resp => console.log(resp))
-    //         .catch(err => console.log(err))
-    //         .finally(() => {
-    //             clearCart()
-    //             setFormData({
-    //                 name:"",
-    //                 phone:"",
-    //                 email:"",
-    //             })
-    //         }
-    //         )
-    //         }
-            
-    // }, []);

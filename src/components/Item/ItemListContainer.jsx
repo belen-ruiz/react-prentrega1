@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./items.css"
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getFetch } from "../../utils/getFetch";
@@ -6,6 +6,7 @@ import { Loader } from "../common/Loader";
 import { ItemCount } from "./ItemCount";
 import { ItemList } from "./ItemList"
 import { productosServicios } from "../../utils/products";
+import { Categorias } from "../pages/Shop/Categorias";
 
 
 export const ItemListContainer = () => {
@@ -37,13 +38,11 @@ export const ItemListContainer = () => {
             ? 
               <Loader />
             : 
-              <div style={{
-              display: 'flex',
-              flexDirection: 'row',
-              flexWrap: 'wrap'
-              }} >
+              <div className="itemListContainer">
+                  <Categorias/>
                   <ItemList productos={productos}/>               
               </div>
+              
 
   )
 }

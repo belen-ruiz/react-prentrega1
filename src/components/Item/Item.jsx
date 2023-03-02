@@ -5,16 +5,13 @@ export const Item =  memo(  ({ producto }) => {
 
     
     return (
-      <div className='card w-25 mt-2' >
+      <div className='productCard' >
         <Link to={`/item/${producto.id}`}>
-          <div className='card-header'>
-            Nombre: {producto.name}
+          <div className='productCard-header'>
+            {producto.name}
           </div>
-          <div className='card-body'>
-            <img src={producto.foto} alt='foto' className="w-100"/>
-          </div>
-          <div className='card-footer'>
-              {/* <button className="btn btn-outline-primary w-100">Detalle</button> */}
+          <div className='productCard-body'>
+            <img src={producto.foto} alt='foto' className="imagen"/>
           </div>
         </Link>
       </div>
