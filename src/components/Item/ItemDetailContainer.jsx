@@ -17,7 +17,6 @@ export const ItemDetailContainer = () => {
       }, [id]);
 
   return (
-        // <ItemDetail producto ={ producto }/> 
 
         producto && (
       <>

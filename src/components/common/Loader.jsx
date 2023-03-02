@@ -1,13 +1,16 @@
 
+import "./loader.css"
 
 
 
 export const Loader =(loading)=>{
     return(
-        <>
-          {loading && <h1>loading...........</h1>}
-        </>
-        
+      <div className="spinnerBox">
+        <div className="spinner-border text-success" role="status">
+        </div>
+          
+        <div className="sr-only">Cargando...</div>
+      </div>        
     )
 
 }

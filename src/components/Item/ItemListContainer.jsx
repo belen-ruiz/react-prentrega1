@@ -16,17 +16,23 @@ export const ItemListContainer = () => {
 
   const { categoria } = useParams();
 
+
   useEffect(()=>{
-    setLoading(true)
     if (categoria){
-      productosServicios.getAll()
-      .then(res => {setProductos(res.filter(producto => producto.categoria === categoria))})
-      .finally(setLoading(false))
+      setTimeout(()=>{
+        productosServicios.getAll()
+        .then(res => {setProductos(res.filter(producto => producto.categoria === categoria))})
+        .finally(setLoading(false))
+      }, 1000)
       
     }else{
-      productosServicios.getAll()
-      .then((data)=> setProductos(data))
-      .finally(setLoading(false))
+      setTimeout(()=>{
+
+        productosServicios.getAll()
+        .then((data)=> setProductos(data))
+        .finally(setLoading(false))
+
+      }, 1000)
       }
           
   }, [categoria]);
