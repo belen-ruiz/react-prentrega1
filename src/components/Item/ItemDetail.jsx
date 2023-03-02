@@ -24,6 +24,7 @@ export const ItemDetail = ({ producto }) => {
  
 
   return (
+
           <div className="product">
                 <div className='productCardDetail' >
 

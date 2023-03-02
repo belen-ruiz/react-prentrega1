@@ -9,6 +9,7 @@ import { productosServicios } from "../../utils/products";
 
 export const ItemDetailContainer = () => {
 
+  const [ loading, setLoading ] = useState(true);
   const [ producto, setProducto ] =  useState()
   const { id } = useParams()
 
@@ -18,7 +19,7 @@ export const ItemDetailContainer = () => {
 
   return (
 
-        producto && (
+    producto && (
       <>
         <ItemDetail producto ={ producto }/> 
       </>
