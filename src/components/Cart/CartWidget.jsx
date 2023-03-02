@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useCartContext } from "../../context/CartContext"
 import "../../app.css"
-import { Cart } from "./Cart";
 import { Link } from "react-router-dom";
 
 const CartWidget = () =>{
@@ -18,9 +17,9 @@ const CartWidget = () =>{
                     </svg>
                 </div>
 
-                <div>
+                <div className="cartCountBox">
                     <div className="cartCount" >
-                    {cartList.length > 0 && cantidadTotal() } 
+                    { cartList.length > 0 && cantidadTotal() } 
                     </div>
                 </div> 
             </div>
@@ -29,3 +28,4 @@ const CartWidget = () =>{
 }
 
 export {CartWidget};
+

@@ -1,9 +1,33 @@
-.iconoContenedor{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.cartView{
+    padding: 5rem;
 }
 
-.iconoContenedor .icono .cartWigdet{
-    color: #808080;
+.dataView{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.dataView img{
+    width: 10%;
+    height: 10%;
+
+}
+
+.precioTotal{
+    text-align: center;
+    font-size: 2rem;
+    color: green;
+    font-weight: bolder;
+}
+
+.form{
+    border: 1px solid black;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
 }

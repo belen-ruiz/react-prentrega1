@@ -33,16 +33,21 @@ export const ItemDetail = ({ producto }) => {
 
                     <div className='productCard-body'>
                       <img src={producto.foto} alt='foto' className="imagenDetail"/>
-                      Categoria: {producto.categoria}<br/>
-                      Descripcion: {producto.description}<br/>
-                      Precio: {producto.price}
-                    </div>
 
-                    <div className='addToCart'>
-                      <ItemCount onAdd={ onAdd }  initial={1} stock={producto.stock}  />
+                      <div className='productCard-description'>
+                        <div className='productCard-text'>
+                          <p>Categoria: {producto.categoria}</p>
+                          <p>Descripcion: {producto.description}</p>
+                          <p>Precio: <span> ${producto.price} </span> </p>
+                        </div> 
+
+                        <div className='addToCart'>
+                          <ItemCount onAdd={ onAdd }  initial={1} stock={producto.stock}  />
+                        </div>
+                      </div>
                     </div>
                     
-                    <div> 
+                    <div className="btnEliminar"> 
                       <NavLink to="/cart" className="buttonGreenOutline" >Terminar mi compra</NavLink>
                     </div>  
                 </div>    

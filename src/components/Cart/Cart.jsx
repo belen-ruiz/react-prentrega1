@@ -1,3 +1,5 @@
+
+import "./cart.css"
 import { getFirestore, collection, addDoc } from "firebase/firestore"
 import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
@@ -50,23 +52,25 @@ const Cart = () => {
     }
 
     return (
-            <div>
+            <div className="cartView" >
                 { cartList.map(producto => (
                 
-                   <div key={producto.id}>
-                        <img src={producto.foto} style={{width: 100}} />
-                        Nombre: {producto.name} - x{producto.cantidad}u. - Precio: ${producto.price}
+                <div className="dataView" key={producto.id}>
+                        <img src={producto.foto}  />
+
+                        <p>Nombre: {producto.name} - x{producto.cantidad}u. - Precio: ${producto.price}</p>
+                        
                         <button>Eliminar producto</button> 
                         
-                    </div>
+                </div>))}
                 
-                ))}
-                <div>
+                
+                <div className="precioTotal" >
                             Total: ${precioTotal()}
 
                 </div>
     
-                <form onSubmit={sendOrder} >
+                <form  className="form" onSubmit={sendOrder} >
                     <input 
                         type="text" 
                         name="name"          
@@ -93,9 +97,10 @@ const Cart = () => {
                     />
 
                     <div className="btn btn-outline-success" onClick={sendOrder}type="submit">Generar la orden</div>
+                    
+                    <div className="btn btn-outline-danger" onClick={clearCart}>Vaciar Carrito</div>
                 </form>
     
-                <button className="btn btn-outline-danger" onClick={clearCart}>Vaciar Carrito</button>
             </div>
         )
     }
