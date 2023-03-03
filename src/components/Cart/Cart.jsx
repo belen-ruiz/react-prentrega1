@@ -64,11 +64,12 @@ const Cart = () => {
                         
                 </div>))}
                 
+                {precioTotal > 0 && 
+                    <div className="precioTotal" >
+                        Total: ${precioTotal()}
+                    </div> 
+                }
                 
-                <div className="precioTotal" >
-                            Total: ${precioTotal()}
-
-                </div>
     
                 <form  className="form" onSubmit={sendOrder} >
                     <input 
