@@ -3,12 +3,16 @@ import "./cart.css"
 import { getFirestore, collection, addDoc } from "firebase/firestore"
 import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
+import { useParams } from "react-router-dom"
 
 
 
 const Cart = () => {
 
     const { cartList, clearCart, precioTotal, eliminarProducto } = useCartContext()
+
+    const { id } = useParams();
+
 
     const [formData, setFormData] = useState({
             name: "",
@@ -51,6 +55,8 @@ const Cart = () => {
             })
     }
 
+
+
     return (
             <div className="cartView" >
                 { cartList.map(producto => (
@@ -60,7 +66,7 @@ const Cart = () => {
 
                         <p>Nombre: {producto.name} - x{producto.cantidad}u. - Precio: ${producto.price}</p>
                         
-                        <button>Eliminar producto</button> 
+                        <button onClick={(e) => eliminarProducto(e, producto.id)} >Eliminar producto</button> 
                         
                 </div>))}
                 

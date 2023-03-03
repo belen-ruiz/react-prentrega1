@@ -6,6 +6,7 @@ export const SearchContainer = () => {
     <div>
         <input className='searchContainer'  type="text" placeholder="Buscar producto..." />
         <Search className="searchIcon"/>
+        
     </div>
   )
 }
