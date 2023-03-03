@@ -1,10 +1,12 @@
 import "./home.css"
 import { Link } from "react-router-dom";
+import { Slider } from "@mui/material";
+import { Slider2 } from "./Slider2";
 
 const Home = ()=>{
 
     return(
-
+        <>
         <div className="homeContainer">
             <h1>El Botanico<span>.</span></h1> 
             <h2>Te ayudamos a elegir tú próxima planta. En nuestra tienda online vas a encontrar una amplia variedad de plantas y macetas. </h2>
@@ -15,6 +17,10 @@ const Home = ()=>{
                 </div>
             </Link>
         </div>
+
+        <Slider2 />
+
+        </>
     )
 }
 

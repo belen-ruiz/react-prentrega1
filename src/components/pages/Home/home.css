@@ -41,3 +41,44 @@ transform: scale3d(1.006, 1.006, 1)
 }
 
 
+.sliderBox{
+    width: 100vw;
+    position: relative;
+    
+}
+
+.sliderBox .wrapper img{
+    width: 100%;
+    transform: translateX(0vw);
+}
+
+.sliderBox .wrapper{
+    display: flex;
+    overflow: hidden;
+}
+
+.sliderBox .arrows{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 1rem;
+    color: whitesmoke;
+
+}
+
+.sliderBox .arrows .leftArrow{
+    position: absolute;
+    background-color: green;
+    left: 30px;
+    top: 50%;
+
+}
+
+.sliderBox .arrows .rightArrow{
+    position: absolute;
+    background-color: green;
+    right: 30px;
+    top: 50%;
+
+}
