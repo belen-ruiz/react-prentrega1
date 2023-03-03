@@ -1,13 +1,14 @@
 import "./shop.css"
-import { NavLink } from "react-router-dom";
 import { ItemListContainer } from "../../Item/ItemListContainer";
 import { Loader } from "../../common/Loader";
 import { useState } from "react";
+import { Categorias } from "../Shop/Categorias";
+import { FiltrosBox } from "../../../utils/FiltrosBox";
 
 
 export const Shop = ()=>{
 
-    const [ loading, setLoading ] = useState(true);
+    const [ loading, setLoading ] = useState(false);
 
 
     return(
@@ -16,7 +17,11 @@ export const Shop = ()=>{
             ? 
             <Loader />
             : 
-            <ItemListContainer /> 
+            <>
+                <Categorias/>
+                <FiltrosBox />
+                <ItemListContainer /> 
+            </>
         
     )
 }

@@ -48,14 +48,13 @@ export const CartProvider = ({children})=>{
 
     // eliminar item por id
 
-    // const eliminarProducto = ()=>(console.log("eliminar"))
     const eliminarProducto = (e, id) => {
         e.stopPropagation()
         setCartList(cartList.filter(producto => producto.id != id))
         console.log(cartList)
     }
 
-
+    //vaciar carrito
     const clearCart = ()=> setCartList ([]);
 
 

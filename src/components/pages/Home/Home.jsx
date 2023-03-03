@@ -2,6 +2,8 @@ import "./home.css"
 import { Link } from "react-router-dom";
 import { Slider } from "@mui/material";
 import { Slider2 } from "./Slider2";
+import { ItemListContainer } from "../../Item/ItemListContainer";
+
 
 const Home = ()=>{
 
@@ -19,6 +21,7 @@ const Home = ()=>{
         </div>
 
         <Slider2 />
+        <ItemListContainer />
 
         </>
     )

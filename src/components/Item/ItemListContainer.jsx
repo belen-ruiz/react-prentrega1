@@ -5,8 +5,7 @@ import { Loader } from "../common/Loader";
 import { ItemCount } from "./ItemCount";
 import { ItemList } from "./ItemList"
 import { productosServicios } from "../../utils/products";
-import { Categorias } from "../pages/Shop/Categorias";
-import { FiltrosBox } from "../../utils/FiltrosBox";
+
 
 
 export const ItemListContainer = () => {
@@ -45,8 +44,6 @@ export const ItemListContainer = () => {
               <Loader />
             : 
               <div className="itemListContainer">
-                  <Categorias/>
-                  <FiltrosBox />
                   <ItemList productos={productos}/>               
               </div>
               
