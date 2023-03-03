@@ -36,6 +36,7 @@ export const Header = () => {
     //   useEffect(() => {
     //     setSearchParams(criteria);
     //   }, [criteria, setSearchParams]);
+
     
 
     return(
@@ -46,6 +47,7 @@ export const Header = () => {
                 <Logo />
                 <NavBar />
                 <SearchContainer />
+                {/* {searchParams.get("name")} */}
                 <CartContainer />
             </header>
         </>
