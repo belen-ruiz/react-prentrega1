@@ -1,8 +1,6 @@
 import { useState } from "react"
 import { useContext, useEffect } from "react"
 import { createContext } from "react"
-import { useParams } from "react-router-dom"
-import { getFetch } from "../utils/getFetch"
 
 const CartContext = createContext([])
 

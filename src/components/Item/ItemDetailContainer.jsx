@@ -1,7 +1,6 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
-import { getFetch } from "../../utils/getFetch";
 import { useParams } from "react-router-dom";
 import { Loader } from "../common/Loader";
 import { ItemDetail } from "./ItemDetail";

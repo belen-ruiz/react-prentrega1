@@ -24,7 +24,5 @@ const get = async (id) => {
 }
 
 
-
-
 export const productosServicios = { getAll, get };
 

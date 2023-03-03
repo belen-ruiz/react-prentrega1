@@ -49,7 +49,15 @@ transform: scale3d(1.006, 1.006, 1)
 
 .sliderBox .wrapper img{
     width: 100%;
+}
+
+.sliderBox .wrapper .img1{
     transform: translateX(0vw);
+}
+
+
+.sliderBox .wrapper .img2{
+    transform: translateX(100vw);
 }
 
 .sliderBox .wrapper{

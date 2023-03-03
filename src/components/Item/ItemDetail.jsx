@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useParams, NavLink, BrowserRouter, Route, Routes } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
-import { getFetch } from "../../utils/getFetch";
 import { Loader } from "../common/Loader";
 import { Cart } from "../Cart/Cart";
 import { ItemCount } from "./ItemCount";

@@ -1,7 +1,6 @@
 import "./items.css"
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getFetch } from "../../utils/getFetch";
 import { Loader } from "../common/Loader";
 import { ItemCount } from "./ItemCount";
 import { ItemList } from "./ItemList"
@@ -23,7 +22,7 @@ export const ItemListContainer = () => {
         productosServicios.getAll()
         .then(res => {setProductos(res.filter(producto => producto.categoria === categoria))})
         .finally(setLoading(false))
-      }, 1000)
+      }, 2000)
       
     }else{
       setTimeout(()=>{
@@ -32,7 +31,7 @@ export const ItemListContainer = () => {
         .then((data)=> setProductos(data))
         .finally(setLoading(false))
 
-      }, 1000)
+      }, 2000)
       }
           
   }, [categoria]);

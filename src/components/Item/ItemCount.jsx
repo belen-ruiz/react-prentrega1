@@ -1,6 +1,5 @@
 import React,{ useState, useEffect } from "react"
 import { useCartContext } from "../../context/CartContext";
-import { getFetch } from "../../utils/getFetch";
 
 
 
