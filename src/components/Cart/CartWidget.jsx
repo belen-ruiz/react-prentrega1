@@ -18,7 +18,6 @@ const CartWidget = () =>{
                 </div>
 
                 <div className="cartCountBox">
-                    
                     {cantidadTotal() > 0 && 
                     <div className="cartCount" >
                         {cantidadTotal()}

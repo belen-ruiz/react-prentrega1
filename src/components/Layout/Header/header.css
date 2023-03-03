@@ -42,3 +42,14 @@
     cursor: pointer;
     
 }
+
+.searchContainer{
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    padding-left: 10px;
+}
+
+.searchIcon{
+    color: #808080;
+}
