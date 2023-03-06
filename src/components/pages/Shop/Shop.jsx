@@ -18,8 +18,6 @@ export const Shop = ()=>{
             <Loader />
             : 
             <>
-                <Categorias/>
-                <FiltrosBox />
                 <ItemListContainer /> 
             </>
         
