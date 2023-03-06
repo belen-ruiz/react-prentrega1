@@ -11,6 +11,7 @@ const Cart = () => {
         name: "",
         phone: "",
         email: "",
+        repetirEmail: "",
     });
 
     const handleOnChange = (e) => {
@@ -34,7 +35,7 @@ const Cart = () => {
         order.total = precioTotal();
 
         console.log(order);
-    
+
         const db = getFirestore();
         const ordersCollection = collection(db, "orders");
         addDoc(ordersCollection, order)
@@ -46,8 +47,9 @@ const Cart = () => {
                     name: "",
                     phone: "",
                     email: "",
+                    repetirEmail: "",
                 });
-            });        
+            });
     };
 
     return (
@@ -93,14 +95,17 @@ const Cart = () => {
                     onChange={handleOnChange}
                     value={formData.email}
                 />
+                <input
+                    type="text"
+                    name="repetirEmail"
+                    placeholder="Repetir el email"
+                    onChange={handleOnChange}
+                    value={formData.repetirEmail}
+                />
 
-                <div
-                    className="buttonGreen"
-                    onClick={sendOrder}
-                    type="submit"
-                >
+                <div className="buttonGreen" onClick={sendOrder} type="submit">
                     Generar la orden
-                </div> 
+                </div>
 
                 <div className="buttonRed" onClick={clearCart}>
                     Vaciar Carrito

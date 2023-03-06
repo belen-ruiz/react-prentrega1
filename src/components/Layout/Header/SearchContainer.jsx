@@ -7,15 +7,6 @@ import { productosServicios } from "../../../utils/products";
 
 export const SearchContainer = ({ onChange }) => {
 
-  const [query, setQuery] = useState({
-    name: "",
-  });
- 
-
-  // useEffect(()=>{
-  //   onChange({ query });
-  // }, [onChange, query]);
-
 
   return (
     <div>
@@ -23,8 +14,8 @@ export const SearchContainer = ({ onChange }) => {
         className='searchContainer'  
         type="text" 
         placeholder="Buscar producto..."
-        // value={query.name}
-        // onChange={(e) => setQuery((prevState) => ({...prevState, name: e.target.value}))} 
+        value={query.name}
+        onChange={(e) => setQuery((prevState) => ({...prevState, name: e.target.value}))} 
         />
         <Search className="searchIcon"/>
     </div>

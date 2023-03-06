@@ -1,74 +1,63 @@
-import { useState } from "react"
-import { useContext, useEffect } from "react"
-import { createContext } from "react"
+import { useState } from "react";
+import { useContext, useEffect } from "react";
+import { createContext } from "react";
 
-const CartContext = createContext([])
+const CartContext = createContext([]);
 
+export const useCartContext = () => useContext(CartContext);
 
-export const useCartContext =()=> useContext(CartContext)
+export const CartProvider = ({ children }) => {
+    const [cartList, setCartList] = useState([]);
 
-export const CartProvider = ({children})=>{
-
-
-    const [ cartList, setCartList] = useState([]);
-
-    const agregarCarrito = (newProducto) =>{
-        const id = cartList.findIndex(producto => producto.id === newProducto.id)
-        if(id!==-1){
-            cartList[id].cantidad += newProducto.cantidad
-            setCartList([...cartList])
-            return 
+    const agregarCarrito = (newProducto) => {
+        const id = cartList.findIndex(
+            (producto) => producto.id === newProducto.id
+        );
+        if (id !== -1) {
+            cartList[id].cantidad += newProducto.cantidad;
+            setCartList([...cartList]);
+            return;
         }
 
-        setCartList( [
-            ...cartList,
-            newProducto
-        ] )
-
-    }
-
-
-    // console.log(cartList);
-    useEffect(() => {
-
-        console.log(cartList);
-        
-    }, [cartList]);
-
-    //is in cart
+        setCartList([...cartList, newProducto]);
+    };
 
     // cantidad total
 
-    const cantidadTotal = () => cartList.reduce( (count, producto) => count += producto.cantidad, 0)
+    const cantidadTotal = () =>
+        cartList.reduce((count, producto) => (count += producto.cantidad), 0);
 
-    // precio total 
+    // precio total
 
-    const precioTotal = () => cartList.reduce( (count, producto) => count += (producto.cantidad*producto.price), 0)
-
+    const precioTotal = () =>
+        cartList.reduce(
+            (count, producto) => (count += producto.cantidad * producto.price),
+            0
+        );
 
     // eliminar item por id
 
     const eliminarProducto = (e, id) => {
-        e.stopPropagation()
-        setCartList(cartList.filter(producto => producto.id != id))
-        console.log(cartList)
-    }
+        e.stopPropagation();
+        setCartList(cartList.filter((producto) => producto.id != id));
+        console.log(cartList);
+    };
 
     //vaciar carrito
-    const clearCart = ()=> setCartList ([]);
+    const clearCart = () => setCartList([]);
 
-
-    return(
-        <CartContext.Provider value={{
-            cartList,
-            agregarCarrito,
-            clearCart,
-            cantidadTotal,
-            precioTotal,
-            eliminarProducto
-        }}>
+    return (
+        <CartContext.Provider
+            value={{
+                cartList,
+                agregarCarrito,
+                clearCart,
+                cantidadTotal,
+                precioTotal,
+                eliminarProducto,
+            }}
+        >
             {children}
         </CartContext.Provider>
-    )
-}
-
+    );
+};

@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Loader } from "../common/Loader";
 import { ItemDetail } from "./ItemDetail";
 import { productosServicios } from "../../utils/products";
 
@@ -24,29 +23,3 @@ export const ItemDetailContainer = () => {
       ));  
 }
 
-
-
-// export const ItemDetailContainer = () => {
-
-//       const [ producto, setProducto ] =  useState({})
-//       const [ loading, setLoading ] =  useState({})
-
-//       const { id } = useParams()
-
-//       useEffect(()=>{
-//             if (id) {
-//               getFetch()
-//               .then(res => {      
-//                 setProducto(res.find(producto => producto.id === id))
-//               })
-              
-//               .catch(error => console.log(error))
-//               .finally(setLoading(false))
-//             }
-//           }, [id])
-
-//       return (
-//             <ItemDetail producto ={ producto }/> 
-//           )
-
-// }

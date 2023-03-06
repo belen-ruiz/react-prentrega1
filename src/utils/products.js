@@ -1,8 +1,4 @@
-
-
-
-import { getFirestore, doc, getDoc, getDocs, collection, query,
-    where, } from "firebase/firestore";
+import { getFirestore, doc, getDoc, getDocs, collection } from "firebase/firestore";
 
 
 const getAll = async () => {
@@ -23,20 +19,6 @@ const get = async (id) => {
 
     return producto
 }
-
-
-
-// const getByName = async (name) => {
-//     const db = getFirestore();
-//     const productCollection = collection(db, "items");
-  
-//     const q = query(productCollection, where("name", "===", name));
-//     const snapshot = await getDocs(q);
-  
-//     const productos = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-  
-//     return productos;
-//   };
 
 
 export const productosServicios = { getAll, get };

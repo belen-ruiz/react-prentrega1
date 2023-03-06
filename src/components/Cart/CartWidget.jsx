@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const CartWidget = () =>{
 
-    const { cartList, cantidadTotal } = useCartContext() 
+    const { cantidadTotal } = useCartContext() 
 
     return(
         <Link className="noLink" to={"/cart"}>
