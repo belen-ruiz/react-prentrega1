@@ -7,7 +7,6 @@ Dependencias: {
     ICONOS:
     "@mui/icons-material": "^5.11.11",  
     "@mui/material": "^5.11.11",
-
     
     FIREBASE:
     "firebase": "^9.17.1",

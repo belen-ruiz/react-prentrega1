@@ -1,9 +1,10 @@
 import { Filtros } from "./Filtros";
+import { useState } from "react";
+
 
 
 export const FiltrosBox = () => {
  
-
   const [ productos, setProductos ] = useState([]);
   const [ loading, setLoading ] = useState(true);
 

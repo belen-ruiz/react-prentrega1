@@ -1,12 +1,14 @@
 import "./header.css"
 import { Search } from '@mui/icons-material';
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import { productosServicios } from "../../../utils/products";
+import { useState } from "react";
 
 
 export const SearchContainer = ({ onChange }) => {
 
+  const [query, setQuery] = useState({
+    name: "",
+  });
+ 
 
   return (
     <div>
