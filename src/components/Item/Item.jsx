@@ -6,7 +6,7 @@ export const Item =  memo(  ({ producto }) => {
     
     return (
       <div className='productCard' >
-        <Link to={`/item/${producto.id}`}>
+        <Link className="noLink" to={`/item/${producto.id}`  }>
           <div className='productCard-header'>
             {producto.name}
           </div>

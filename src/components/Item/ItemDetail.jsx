@@ -1,12 +1,9 @@
 
 
 import { useState } from "react";
-import { useParams, NavLink, BrowserRouter, Route, Routes } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
-import { Loader } from "../common/Loader";
-import { Cart } from "../Cart/Cart";
 import { ItemCount } from "./ItemCount";
-import { ItemListContainer } from "./ItemListContainer";
 
 
 
@@ -29,7 +26,11 @@ export const ItemDetail = ({ producto }) => {
 
                     <div className='productCard-header'>
                       {producto.name}
+                      <Link to="/shop" className="closingTag noLink">
+                        x
+                      </Link>
                     </div>
+                    
 
                     <div className='productCard-body'>
                       <img src={producto.foto} alt='foto' className="imagenDetail"/>
@@ -48,7 +49,7 @@ export const ItemDetail = ({ producto }) => {
                     </div>
                     
                     <div className="btnEliminar"> 
-                      <NavLink to="/cart" className="buttonGreenOutline" >Terminar mi compra</NavLink>
+                      <NavLink to="/cart" className="buttonGreenOutline noLink" >Terminar mi compra</NavLink>
                     </div>  
                 </div>    
 

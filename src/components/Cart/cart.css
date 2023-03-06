@@ -60,7 +60,6 @@
 }
 
 .form{
-    border: 1px solid black;
     display: flex;
     gap: 2rem;
     justify-content: center;

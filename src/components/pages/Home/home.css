@@ -1,30 +1,7 @@
-.buttonGreen{
-    cursor: pointer;
-    background-color: green;
-    color: whitesmoke;
-    padding: 0.8rem 1.5rem;
-    width: fit-content;
-    margin-top: 1rem;
-    transition: opacity 2s cubic-bezier(.165, .84, .44, 1);
-    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
-}
-
-
-.buttonGreen:hover{
-transform: scale3d(1.006, 1.006, 1)
-}
-
-.buttonGreenOutline{
-    cursor: pointer;
-    background-color: whitesmoke;
-    color: green;
-    padding: 0.8rem 1.5rem;
-    width: fit-content;
-    margin-top: 1rem;
-}
 
 .homeContainer{
     padding: 5rem;
+    border-bottom: 2px solid green;
 }
 
 .homeContainer h1{
@@ -41,53 +18,3 @@ transform: scale3d(1.006, 1.006, 1)
 }
 
 
-.sliderBox{
-    width: 100vw;
-    position: relative;
-    
-}
-
-.sliderBox .wrapper img{
-    width: 100%;
-}
-
-.sliderBox .wrapper .img1{
-    transform: translateX(0vw);
-}
-
-
-.sliderBox .wrapper .img2{
-    transform: translateX(100vw);
-}
-
-.sliderBox .wrapper{
-    display: flex;
-    overflow: hidden;
-}
-
-.sliderBox .arrows{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: space-around;
-    margin: 0 1rem;
-    color: whitesmoke;
-
-}
-
-.sliderBox .arrows .leftArrow{
-    position: absolute;
-    background-color: green;
-    left: 30px;
-    top: 50%;
-    z-index: 2;
-
-}
-
-.sliderBox .arrows .rightArrow{
-    position: absolute;
-    background-color: green;
-    right: 30px;
-    top: 50%;
-
-}

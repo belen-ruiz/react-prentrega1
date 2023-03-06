@@ -1,8 +1,8 @@
 .itemListContainer{
     display: flex;
     flex-flow: row wrap;
-    padding: 2rem 0rem;
-    gap: 3rem;
+    padding: 4rem;
+    gap: 2rem;
     text-decoration: none;
     justify-content: center;
     text-align: center;
@@ -12,8 +12,9 @@
 /*  item */
 
 .productCard{
-    width: 25%;
+    width: 40%;
     padding: 1rem;
+    margin: 1rem;
     overflow: hidden;
     transition: opacity 2s cubic-bezier(.165, .84, .44, 1);
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
@@ -27,11 +28,18 @@
 
 
 .productCard-header{
+    display: flex;
+    justify-content: space-around;
     text-align: center;
     font-size: 1rem;
     text-transform: uppercase;
     color: green;
     
+}
+
+.closingTag{
+    color: grey;
+    text-decoration: none;
 }
 
 .productCard-body .imagen{
@@ -51,7 +59,7 @@
 }
 
 .productCardDetail{
-    width: 50%;
+    width: 80%;
     padding: 2rem;
     text-align: center;
     overflow: hidden;

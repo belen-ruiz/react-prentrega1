@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+
+
 
 *{
     padding: 0;
@@ -6,9 +10,50 @@
     text-decoration: none;
     list-style: none;
     font-family: 'Lato', sans-serif;
+}    
+
+
+.noLink{
+    text-decoration: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+.buttonGreen{
+    cursor: pointer;
+    background-color: green;
+    color: whitesmoke;
+    padding: 0.8rem 1.5rem;
+    width: fit-content;
+    margin-top: 1rem;
+    transition: opacity 2s cubic-bezier(.165, .84, .44, 1);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
+}
 
 
+.buttonGreen:hover{
+transform: scale3d(1.006, 1.006, 1)
+}
 
+.buttonGreenOutline{
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: green;
+    padding: 0.8rem 1.5rem;
+    width: fit-content;
+    margin-top: 1rem;
+}
+
+.buttonRed{
+    cursor: pointer;
+    background-color: red;
+    color: whitesmoke;
+    padding: 0.8rem 1.5rem;
+    width: fit-content;
+    margin-top: 1rem;
+    transition: opacity 2s cubic-bezier(.165, .84, .44, 1);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
+}
+
+
+.buttonRed:hover{
+transform: scale3d(1.006, 1.006, 1)
+}

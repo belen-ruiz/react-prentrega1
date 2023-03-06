@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { useState } from "react";
 import { useCartContext } from "../../context/CartContext"
 import "../../app.css"
 import { Link } from "react-router-dom";
@@ -9,7 +7,7 @@ const CartWidget = () =>{
     const { cartList, cantidadTotal } = useCartContext() 
 
     return(
-        <Link to={"/cart"}>
+        <Link className="noLink" to={"/cart"}>
             <div className="iconoContenedor">
                 <div className="icono">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  className="cartWigdet " viewBox="0 0 16 16">
